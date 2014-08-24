@@ -1,10 +1,11 @@
-//zi.js global zi object.
+//zi.js global zi object. depends on jQuery, but let's be real: when do I not use jQeury?
 
 zi={};
 zi.config=function(){
     var css={
       "body":{
-          "font-size":"3em"
+          "font-size":"3em",
+          "text-align":"center"
       },
       "div":{
           "padding":"30px",
@@ -17,7 +18,7 @@ zi.config=function(){
 zi.transform=function(css){
     var c="";
     for (var selector in css){
-        c+="{";
+        c+=selector+"{";
         for (var property in css[selector]){
             c+=property+" : "+css[selector][property]+";";
         }
@@ -29,5 +30,6 @@ zi.css=function(){
     if ($("head#zi").length<1){
         $("head").append("<style type='text/css' id='zi'></style>");
     }
-    $("head#zi").html( this.transform( this.config() ) );
+    console.log(this.transform(this.config() ));
+    $("head style#zi").html( this.transform( this.config() ) );
 };
