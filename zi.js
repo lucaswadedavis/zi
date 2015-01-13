@@ -3,13 +3,14 @@ zi={};
 zi.config=function(){
     var css={
       "body":{
-          "font-size":"3em",
+          "font-size":"2em",
+          "font-family":"sans-serif",
           "text-align":"center"
       },
       "div":{
           "padding":"30px",
           "margin":"30px",
-          "border":"1px solid #000"
+          "border":"1px solid #555"
       }
     };
     return css;
