@@ -1,5 +1,4 @@
 //zi.js global zi object. depends on jQuery, but let's be real: when do I not use jQeury?
-
 zi={};
 zi.config=function(){
     var css={
@@ -27,9 +26,8 @@ zi.transform=function(css){
     return c;
 };
 zi.css=function(){
-    if ($("head#zi").length<1){
+    if ($("head style#zi").length<1){
         $("head").append("<style type='text/css' id='zi'></style>");
     }
-    console.log(this.transform(this.config() ));
     $("head style#zi").html( this.transform( this.config() ) );
 };
